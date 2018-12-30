@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class NOMDetectionImpl implements NOMDetection {
 
     @Override
-    public Long nomDetection(ClassModel classModel) {
+    public Long nomDetection(@NonNull ClassModel classModel) {
         if(classModel.getMethodModels() == null){
             return 0L;
         }
