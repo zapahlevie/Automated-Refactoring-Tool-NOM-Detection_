@@ -11,8 +11,8 @@ public class NOMDetectionImpl implements NOMDetection {
     @Override
     public Long nomDetection(@NonNull ClassModel classModel) {
         if(classModel.getMethodModels() != null){
-            return (Long) (long) classModel.getMethodModels().size();
+            return 0L;
         }
-        return 0L;
+        return (Long) (long) classModel.getMethodModels().size();
     }
 }
