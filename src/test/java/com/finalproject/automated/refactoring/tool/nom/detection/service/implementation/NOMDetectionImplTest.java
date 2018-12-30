@@ -81,9 +81,6 @@ public class NOMDetectionImplTest {
                                 .build()))
                 .methodModels(methodModels)
                 .contentInner("")
-                .loc(0L)
-                .nom(2L)
-                .nof(1L)
                 .build();
     }
 
