@@ -79,7 +79,7 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
-                    <message>Long parameter methods detection module artifacts for ${project.version}</message>
+                    <message>NOM detection module artifacts for ${project.version}</message>
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
                     <branch>refs/heads/mvn-repo</branch>
                     <includes>
