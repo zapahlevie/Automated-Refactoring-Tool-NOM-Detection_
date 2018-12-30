@@ -48,67 +48,22 @@ public class NOMDetectionImplTest {
 
         methodModels.add(MethodModel.builder()
                 .keywords(Collections.singletonList("public"))
-                .name("EmailHelp")
-                .parameters(Arrays.asList(
-                        PropertyModel.builder()
-                                .type("String")
-                                .name("emailDestination")
-                                .build(),
-                        PropertyModel.builder()
-                                .type("String")
-                                .name("emailCc")
-                                .build(),
-                        PropertyModel.builder()
-                                .type("String")
-                                .name("emailBcc")
-                                .build(),
-                        PropertyModel.builder()
-                                .type("String")
-                                .name("emailSubject")
-                                .build(),
-                        PropertyModel.builder()
-                                .type("String")
-                                .name("emailContent")
-                                .build()))
+                .name("call")
+                .parameters(null)
                 .exceptions(Arrays.asList("Exception", "IOException"))
-                .body("\n" +
-                        "       mEmailSubject = emailDestination;\n" +
-                        "       mEmailSubject = emailCc;\n" +
-                        "       mEmailSubject = emailBcc;\n" +
-                        "       mEmailSubject = emailSubject;\n" +
-                        "       mEmailContent = emailContent;\n" +
-                        "\n")
+                .body("")
                 .build());
 
         methodModels.add(MethodModel.builder()
                 .keywords(Collections.singletonList("public"))
                 .returnType("MyResponse<Integer>")
-                .name("addGiftInfoCategory")
+                .name("go")
                 .parameters(Collections.singletonList(
                         PropertyModel.builder()
-                                .type("GiftInfoCategory")
-                                .name("giftInfoCategory")
+                                .type("Integer")
+                                .name("time")
                                 .build()))
-                .body("\n" +
-                        "        String message;\n" +
-                        "        int response;\n" +
-                        "\n" +
-                        "        try {\n" +
-                        "            giftInfoCategory = mGiftInfoCategoryService.addGiftInfoCategory(giftInfoCategory);\n" +
-                        "\n" +
-                        "            boolean isSuccess = giftInfoCategory != null;\n" +
-                        "            message = isSuccess ? \"Gift info category add success\" : \"Gift info category add failed\";\n" +
-                        "            response = isSuccess ? 1 : 0;\n" +
-                        "        } catch (DataIntegrityViolationException e) {\n" +
-                        "            message = \"Gift info category add failed - Gift info category already exists\";\n" +
-                        "            response = 0;\n" +
-                        "        } catch (Exception e) {\n" +
-                        "            message = \"Gift info category add failed - Internal Server Error\";\n" +
-                        "            response = 0;\n" +
-                        "        }\n" +
-                        "\n" +
-                        "        return new MyResponse<>(message, response);\n" +
-                        "\n")
+                .body("")
                 .build());
 
         return ClassModel.builder()
@@ -121,8 +76,8 @@ public class NOMDetectionImplTest {
                 .implement("TestClass")
                 .attributes(Collections.singletonList(
                         PropertyModel.builder()
-                                .type("GiftInfoCategory")
-                                .name("giftInfoCategory")
+                                .type("Integer")
+                                .name("number")
                                 .build()))
                 .methodModels(methodModels)
                 .contentInner("")
@@ -141,8 +96,8 @@ public class NOMDetectionImplTest {
                 .implement("TestClass")
                 .attributes(Collections.singletonList(
                         PropertyModel.builder()
-                                .type("GiftInfoCategory")
-                                .name("giftInfoCategory")
+                                .type("Integer")
+                                .name("number")
                                 .build()))
                 .methodModels(null)
                 .contentInner("")
