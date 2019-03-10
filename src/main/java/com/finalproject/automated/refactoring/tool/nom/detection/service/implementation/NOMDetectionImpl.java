@@ -13,6 +13,6 @@ public class NOMDetectionImpl implements NOMDetection {
         if(classModel.getMethodModels() == null){
             return 0L;
         }
-        return Long.valueOf(classModel.getMethodModels().size());
+        return (long) classModel.getMethodModels().size();
     }
 }
