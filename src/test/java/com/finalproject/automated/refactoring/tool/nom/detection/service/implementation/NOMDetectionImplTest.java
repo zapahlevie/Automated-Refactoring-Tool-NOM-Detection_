@@ -74,11 +74,7 @@ public class NOMDetectionImplTest {
                 .name("TestClassImpl")
                 .extend("")
                 .implement("TestClass")
-                .attributes(Collections.singletonList(
-                        PropertyModel.builder()
-                                .type("Integer")
-                                .name("number")
-                                .build()))
+                .attributes(Collections.singletonList("Integer num"))
                 .methodModels(methodModels)
                 .contentInner("")
                 .build();
@@ -93,11 +89,7 @@ public class NOMDetectionImplTest {
                 .name("TestClassImpl")
                 .extend("")
                 .implement("TestClass")
-                .attributes(Collections.singletonList(
-                        PropertyModel.builder()
-                                .type("Integer")
-                                .name("number")
-                                .build()))
+                .attributes(Collections.singletonList("Integer num"))
                 .methodModels(null)
                 .contentInner("")
                 .nom(0L)
